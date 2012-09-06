@@ -1,9 +1,9 @@
 A few Maven projects illustrating a bug I've been encountering.
 
 Project Relationships:
-* `projectA` produces two artifacts with different classifiers: `projectA` and `projectA-someclassifier`
+* `projectA` produces two artifacts with different classifiers: `projectA` and `projectA-someclassifier`.
 * `projectB` depends directly on `projectA-someclassifier` (and also junit, for illustration purposes).
-* `projectC` depends directly on `projectB` and `projectA` (note the lack of classifier) and transitively on `projectA-someclassifier`
+* `projectC` depends directly on `projectB` and `projectA` (note the lack of classifier) and transitively on `projectA-someclassifier` and `junit`.
 
 To see the bug, install projectA and projectB to your local repository, then run the following commands on projectC:
 * `mvn dependency:resolve`
